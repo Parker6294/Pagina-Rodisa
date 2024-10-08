@@ -1,0 +1,622 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+nav {
+    display: flex; /* Usar flexbox para alinear el contenido */
+    justify-content: space-between; /* Espacio entre logo y menú */
+    align-items: center; /* Alinear verticalmente */
+    background: rgba(255, 255, 255, 0);
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 100px; /* Ajusta la altura según necesites */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #004585;
+}
+
+.scrolled {
+    background-color: #4747476f;
+}
+
+.scrolled a {
+    color: white;
+}
+
+
+/* seccion 1*/
+.triangle-section {
+    position: relative;
+    height: 90vh; /* Altura del 90% de la pantalla */
+    overflow: hidden;
+    clip-path: polygon(0% 85%, 0% 0%, 100% 0%, 100% 85%, 50% 100%); /* Polígono de 5 puntas invertido */
+    background-image: url('Imagenes/emplayado.jpeg'); /* Reemplaza con la URL de tu imagen */
+    background-size: cover; /* Mantiene la imagen cubriendo el área */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que se repita la imagen */
+}
+
+
+.triangle-section img {
+    max-width: 100%; /* Asegura que la imagen no exceda el contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Mantiene la relación de aspecto sin recortes */
+}
+
+
+.triangle-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, #004585, rgba(0, 0, 0, 0.473)); /* Degradado de arriba hacia abajo */
+    z-index: 1;
+}
+
+
+.triangle-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+    text-align: center; /* Centrar todo el contenido */
+}
+
+.triangle-content h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.triangle-content h2 {
+    font-size: 2rem;
+    margin: 10px 0 0;
+}
+
+.small-text {
+    font-size: 1rem;
+    margin: 10px 0; /* Añade espacio entre el texto y las etiquetas */
+}
+
+.tags {
+    display: flex;
+    gap: 10px; /* Espacio entre etiquetas */
+}
+
+.tag {
+    padding: 10px 20px;
+    border: 2px solid white;
+    color: white;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+    cursor: pointer;
+}
+
+.tag:hover {
+    background-color: #004585; /* Cambia a azul */
+    color: white; /* Mantiene el texto en blanco */
+    border-color: #004585; /* Cambia el contorno a azul */
+}
+
+
+/* seccion 2 */
+.about-section {
+    padding: 40px;
+    background-color: #f9f9f9; /* Fondo claro para la sección */
+    text-align: center; /* Centrar el texto */
+}
+
+.about-content {
+    display: flex;
+    align-items: flex-start; /* Alinear la parte superior */
+    justify-content: center; /* Centrar horizontalmente */
+    gap: 20px; /* Espacio entre el texto y la imagen */
+}
+
+.text-content {
+    max-width: 500px; /* Limitar el ancho del texto */
+    text-align: justify; /* Justificar el texto */
+}
+
+.about-content img {
+    width: 300px; /* Ajusta el tamaño de la imagen según necesites */
+    height: auto; /* Mantener la relación de aspecto */
+}
+
+
+/* seccion 3*/
+.squares-section {
+    padding: 40px;
+    text-align: center; /* Centrar el contenido */
+}
+
+.square-container {
+    display: flex; /* Usar flexbox para alinear los cuadrados */
+    justify-content: center; /* Centrar los cuadrados horizontalmente */
+    margin-bottom: 20px; /* Espacio entre las filas de cuadrados */
+}
+
+.square {
+    position: relative;
+    width: 200px; /* Aumenta el tamaño del cuadrado */
+    height: 200px; /* Aumenta el tamaño del cuadrado */
+    overflow: hidden; /* Ocultar el contenido que se desborde */
+    /* border-radius: 10px; */ /* Elimina esta línea para quitar esquinas redondeadas */
+    margin: 0; /* Sin margen */
+}
+
+
+.square img {
+    width: 100%; /* Ajustar la imagen al tamaño del cuadrado */
+    height: 100%; /* Ajustar la imagen al tamaño del cuadrado */
+    object-fit: cover; /* Mantener la relación de aspecto de la imagen */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(#00458563, #00458563); /* Degradado azul */
+    display: flex;
+    flex-direction: column; /* Colocar texto en columna */
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    color: white; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+}
+
+.catalog-link {
+    text-decoration: none; /* Elimina la línea debajo del enlace */
+    color: inherit; /* Hereda el color del texto del contenedor */
+    display: flex; /* Permite alinear el texto y el ícono */
+    align-items: center; /* Alinea verticalmente el contenido */
+}
+
+.catalog-text {
+    margin-right: 5px; /* Espacio entre el texto y el ícono */
+}
+
+.catalog-icon {
+    display: inline-flex; /* Asegura que el ícono esté alineado correctamente */
+    justify-content: center;
+    align-items: center;
+    width: 24px; /* Tamaño del círculo */
+    height: 24px; /* Tamaño del círculo */
+    border: 2px solid #004585; /* Color del borde */
+    border-radius: 50%; /* Hace que el borde sea circular */
+    background-color: white; /* Fondo blanco del círculo */
+    color: #004585; /* Color del ícono */
+}
+
+
+/* seccion 4 */
+
+.icon-section {
+    position: relative;
+    text-align: center;
+    padding:  0; /* Mantener espacio solo arriba y abajo */
+    background: transparent; /* Fondo transparente por defecto */
+}
+
+.icon-section::before {
+    content: '';
+    position: absolute;
+    top: 50%; /* Centrar verticalmente */
+    left: 0;
+    right: 0;
+    height: 230px; /* Ajusta la altura según sea necesario */
+    background: #004585; /* Fondo azul */
+    transform: translateY(-50%); /* Centrar el div verticalmente */
+    z-index: -1; /* Asegura que el fondo esté detrás del contenido */
+}
+
+.icon-container {
+    display: flex; /* Usar flexbox para alinear los íconos */
+    justify-content: center; /* Centra los íconos horizontalmente */
+    gap: 40px; /* Espacio entre íconos */
+    flex-wrap: wrap; /* Permite que los íconos se ajusten en múltiples líneas */
+}
+
+.icon-item {
+    width: 150px; /* Ancho de cada ícono */
+    text-align: center; /* Centrar texto debajo del ícono */
+    color: #f9f9f9;
+}
+
+.icon-item i {
+    font-size: 40px; /* Tamaño de los íconos */
+    margin-bottom: 10px; /* Espacio entre el ícono y el texto */
+}
+
+
+/* seccion 5 */
+.rectangles-section {
+    display: flex; /* Usa flexbox para alinear los rectángulos en fila */
+    justify-content: space-around; /* Espacio igual entre los rectángulos */
+    padding: 40px 20px; /* Espaciado alrededor de la sección */
+}
+
+.rectangle {
+    width: 22%; /* Ajusta el ancho según sea necesario */
+    display: flex;
+    flex-direction: column; /* Alinear imagen y contenido verticalmente */
+    overflow: hidden; /* Oculta contenido que exceda el rectángulo */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.rectangle img {
+    width: 100%; /* Ajusta la imagen al ancho del rectángulo */
+    height: 80%; /* Altura fija para las imágenes */
+    object-fit: cover; /* Mantiene la relación de aspecto */
+}
+
+.rectangle-content {
+    background-color: #004585; /* Fondo azul */
+    padding: 15%; /* Espaciado interno */
+    color: white; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+}
+
+.rectangle-content h3 {
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+.rectangle-content p {
+    margin: 10px 0 0; /* Espaciado entre el título y la descripción */
+}
+
+
+/* seccion 6 */
+
+.titulo h1 {
+    text-align: center; /* Centrar el texto */
+    margin: 0; /* Eliminar margen */
+}
+
+.rectangles-section2 {
+    display: flex; /* Usa flexbox para alinear los rectángulos en fila */
+    justify-content: space-around; /* Espacio igual entre los rectángulos */
+    padding: 40px 20px; /* Espaciado alrededor de la sección */
+}
+
+.rectangle2 {
+    width: 22%; /* Ajusta el ancho según sea necesario */
+    display: flex;
+    flex-direction: column; /* Alinear imagen y contenido verticalmente */
+    overflow: hidden; /* Oculta contenido que exceda el rectángulo */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.rectangle2 img {
+    width: 100%; /* Ajusta la imagen al ancho del rectángulo */
+    height: 200px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Mantiene la relación de aspecto */
+}
+
+.rectangle-content2 {
+    background-color: #ffffff00; /* Fondo transparente */
+    padding: 15%; /* Espaciado interno */
+    color: white; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+}
+
+.rectangle-content2 p {
+    margin: 0; /* Elimina el margen por defecto */
+    color: #004585;
+}
+
+a {
+    text-decoration: none; /* Eliminar subrayado de todos los enlaces */
+    color: inherit; /* Heredar el color del texto padre */
+}
+
+a:hover {
+    color: #004585; /* Color al pasar el mouse */
+}
+
+/* seccion 7 */
+.gallery-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido */
+    padding: 20px;
+    width: 100%; /* Asegura que la sección ocupe todo el ancho de la página */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+.gallery-container {
+    display: flex;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 430px; /* Altura total de la sección */
+}
+
+.gallery-container img {
+    width: 0; /* Inicialmente ancho 0 */
+    flex-grow: 1; /* Las imágenes crecerán para ocupar el espacio disponible */
+    object-fit: cover; /* Mantiene la relación de aspecto */
+    opacity: 0.8; /* Opacidad inicial */
+    transition: width 0.5s ease, opacity 0.5s ease, filter 0.5s ease; /* Transiciones */
+}
+
+.gallery-container img:hover {
+    cursor: crosshair; /* Cambia el cursor al pasar sobre la imagen */
+    width: 300px; /* Ancho al hacer hover */
+    opacity: 1; /* Opacidad completa al hacer hover */
+    filter: contrast(120%); /* Aumenta el contraste al hacer hover */
+}
+
+
+/* Footer */
+
+footer {
+    position: relative;
+    width: 1381px;
+    background: #004585; /* Color de fondo */
+    min-height: 150px; /* Ajusta la altura si es necesario */
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 150px; /* Separación del footer */
+}
+
+footer .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: left; /* Alineación a la izquierda */
+    margin-bottom: 15px; /* Espaciado inferior */
+}
+
+footer .info p {
+    margin: 0 15px; /* Espaciado entre icono y texto */
+    font-size: 1em;
+}
+
+footer .info i {
+    margin-right: 5px; /* Espaciado entre el icono y el texto */
+    font-size: 1.5em; /* Tamaño del icono */
+}
+
+footer .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Espaciado inferior de los iconos */
+}
+
+footer .icons i {
+    margin: 0 15px; /* Espaciado entre iconos */
+    font-size: 2em; /* Tamaño del icono */
+}
+
+.info {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.info div {
+    display: flex;
+    align-items: center;
+}
+
+.info i {
+    font-size: 2em; /* Ajusta el tamaño del icono */
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+
+
+
+footer .social_icons, footer .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+footer .social_icons li, footer .menu li {
+    list-style: none;
+}
+
+footer .social_icons li a {
+    font-size: 2em;
+    color: white;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+footer .social_icons li a:hover {
+    transform: translateY(-10px);
+}
+
+footer .menu li a {
+    font-size: 1em;
+    color: white;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+footer .menu li a:hover {
+    opacity: 1;
+}
+
+footer p {
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+footer p a {
+    text-decoration: none;
+    color: white;
+}
+
+footer p ion-icon {
+    color: red;
+    font-size: 1em;
+    display: inline-block;
+    margin-bottom: -2px;
+}
+
+footer .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(Div/wave.png);
+    background-size: 1000px 100px;
+}
+
+footer .wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave 4s linear infinite;
+}
+
+footer .wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWave_02 4s linear infinite;
+}
+
+footer .wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWave 3s linear infinite;
+}
+
+footer .wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animateWave_02 3s linear infinite;
+}
+
+@keyframes animateWave {
+    0% {
+        background-position-x: 1000px;
+    }
+    100% {
+        background-position-x: 0;
+    }
+}
+
+@keyframes animateWave_02 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+/* Estilos generales para dispositivos pequeños (móviles) */
+@media (max-width: 768px) {
+    .triangle-section {
+        height: 60vh; /* Ajusta la altura para pantallas más pequeñas */
+    }
+
+    .about-content {
+        flex-direction: column; /* Cambia a columna en lugar de fila */
+        align-items: center; /* Centra el contenido */
+    }
+
+    .about-content img {
+        width: 100%; /* La imagen ocupa todo el ancho */
+        max-width: 300px; /* Limita el ancho máximo */
+    }
+
+    .square {
+        width: 100%; /* Ajusta el ancho de los cuadrados */
+        height: auto; /* Permite que la altura se ajuste */
+    }
+
+    .rectangle, .rectangle2 {
+        width: 90%; /* Ajusta el ancho de los rectángulos */
+    }
+
+    .gallery-container {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    }
+
+    .gallery-container img {
+        width: 100%; /* Ajusta el ancho de las imágenes */
+        height: auto; /* Permite que la altura se ajuste */
+    }
+
+    nav ul {
+        flex-direction: column; /* Cambia el menú a columna */
+        align-items: center; /* Centra el contenido */
+    }
+
+    nav a {
+        padding: 10px; /* Aumenta el área de clic */
+    }
+}
+
+/* Estilos para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .about-content {
+        flex-direction: row; /* Mantiene el diseño en fila */
+        justify-content: space-between; /* Espacio entre elementos */
+    }
+
+    .square {
+        width: 45%; /* Ajusta el ancho para tablets */
+        height: auto;
+    }
+
+    .rectangle, .rectangle2 {
+        width: 45%; /* Ajusta el ancho de los rectángulos */
+    }
+}
